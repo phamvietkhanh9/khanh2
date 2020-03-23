@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home1.master.cs" Inherits="Demo5.Home1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title> NEXUS SERVICE MARKETING </title>
+    <link href="Theme/Styles.css" rel="stylesheet" />
+    <link href="Theme/Styles.css" rel="stylesheet" />
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Home" runat="server">
+
+
+
+
+        <div id="menutop">
+            <div id="menu">
+                <ul>
+                    <li><a href="index.aspx">Trang Chủ</a></li>
+
+                    <li><a href="xemsao.aspx">Tin Mới</a></li>
+
+                    <li><a href="sanpham.aspx">Sản Phẩm </a></li>
+
+                    <li><a href="#">Liên Hệ </a></li>
+
+                    <asp:Repeater ID="rpBanTin" runat="server">
+                        
+
+                    </asp:Repeater>
+                    
+                    <%
+                    if ((Boolean)Session["admin"] == false)
+                    {
+                    %>
+                       <li><a href="login.aspx">Đăng Nhập</a></li>
+                    <li><a href="dangki.aspx">Đăng Kí</a></li>
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <li><a href="logout.aspx">Thoát</a></li>
+                    <li><a href="chitietAdd.aspx">Thêm Mới</a></li>
+                   
+                   <% } %>
+                </ul>
+            </div>
+           </div>
+
+        <div id="maincontent">
+             
+        <div id="rightcontent">
+                
+            </div>
+          
+
+
+            <div id="content">
+                
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+          </div>
+
+        </div>
+ 
+
+ <footer>
+        <div class="footer_widget">
+					<div class="f_cols">
+						 
+					</div>	
+
+					<div class="f_cols">
+						<h3>Vị Trí</h3>
+						<p>  Số 8  -  Tôn Thất Thuyết, Nam Từ Liêm, Hà Nội. <span class="phone">         </span></p> 	
+						<ul class="sm">
+							<li><a class="fb" href="#"></a></li>
+							<li><a class="twitter" href="#"></a></li>
+							<li><a class="dribbble" href="#"></a></li>
+						</ul>
+					</div>	
+
+					<div class="f_cols">
+						<h3>Công ty - Liên Hệ</h3>
+						<ul>
+							<li><a href="#">   Nexus Marketing là một công ty chuyên cung cấp cái thiết bị mạng    </a></li>
+							<li><a href="#">       </a></li>
+							<li><a href="#">     </a></li>
+							<li><a href="#">      </a></li>
+						</ul>	
+					</div>
+
+					<div class="f_cols">
+						<p></p>
+					</div>
+						<h3></h3>
+			</div>
+        <div>
+			<p class="rights"> CopyRight:Phạm Việt Khánh  <a href="#"></a></p>	
+
+		</div>
+	</footer>
+       
+    </form>
+</body>
+</html>

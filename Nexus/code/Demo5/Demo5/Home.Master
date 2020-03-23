@@ -1,0 +1,279 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Demo5.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title> NEXUS SERVICE MARKETING </title>
+    <link href="Theme/Styles.css" rel="stylesheet" />
+    <link href="Theme/Styles.css" rel="stylesheet" />
+    
+
+
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+
+
+
+<body>
+
+   
+
+
+
+
+    <header class="trasparent_nav">
+		<div class="wrapper">
+			<div class="logo">
+				<a href="#"><img src="img/logo.png" alt="Fertile"></a>
+			</div>
+            <nav>
+				<ul>
+
+
+					<li><a href="index.aspx">Trang Chủ</a></li>
+
+                    <li><a href="xemsao.aspx">Tin Mới</a></li>
+
+                    <li><a href="sanpham.aspx">Sản Phẩm </a></li>
+
+                    <li><a href="#">Liên Hệ </a></li>
+
+                      <asp:Repeater ID="rpBanTin1" runat="server">
+                        
+
+                    </asp:Repeater>
+                    <%
+                    if ((Boolean)Session["admin"] == false)
+                    {
+                    %>
+                       <li><a href="login.aspx">Đăng Nhập</a></li>
+                      
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <li><a href="dangki.aspx">Đăng Kí</a></li>
+                    <li><a href="logout.aspx">Thoát</a></li>
+                    <li><a href="chitietAdd.aspx">Thêm Mới</a></li>
+                   
+                   <% } %>
+                    
+                  
+					
+
+
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+    <header class="fixed_nav">
+		<div class="wrapper">
+			<div class="logo">
+				<a href="#"><img src="img/logo_small.png" alt="Fertile"></a>
+			</div>
+
+			<nav>
+				<ul>
+
+                    <li><a href="index.aspx">Trang Chủ</a></li>
+
+                    <li><a href="xemsao.aspx">Tin Mới</a></li>
+
+                    <li><a href="sanpham.aspx">Sản Phẩm </a></li>
+
+                    <li><a href="#">Liên Hệ </a></li>
+
+                      <asp:Repeater ID="rpBanTin2" runat="server">
+                        
+
+                    </asp:Repeater>
+                    <%
+                    if ((Boolean)Session["admin"] == false)
+                    {
+                    %>
+                       <li><a href="login.aspx">Đăng Nhập</a></li>
+                      
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <li><a href="dangki.aspx">Đăng Kí</a></li>
+                    <li><a href="logout.aspx">Thoát</a></li>
+                    <li><a href="chitietAdd.aspx">Thêm Mới</a></li>
+                   
+                   <% } %>
+
+
+                    
+                   
+					
+
+
+				</ul>
+			</nav>
+		</div>
+	</header><!-- End fixed_nav -->
+
+
+    <section class="billboard">
+		<img src="img/billboard.jpg" alt="" title=""/>
+	</section><!-- End billboard -->
+
+
+    <section class="cta cta_top">
+		<p>Bạn Đang Tìm Kiếm Một Kết Nối Internet Ổn Định Tốc Độ Cao</p>
+		<a href="#">Hãy Liên Lạc Với Chúng Tôi</a>
+	</section><!-- End cta_top -->
+
+
+
+        
+    <section class="services wrapper">
+			<h2>Chúng Tôi Cung Cấp Đến Các Bạn Những Thứ Tuyệt Vời Nhất</h2>
+			<div class="separator">
+				<img src="img/separator.png" alt=""/>
+			</div>
+			<ul>
+				<li>
+					<img class="s_icons" src="img/s1.png" alt=""/>
+					<h3>Hỗ Trợ Trực Tuyến 24/7</h3>
+					<p>Chúng tôi luôn luôn trực tuyến để giúp giải đáp thắc mắc của bạn từ những điều nhỏ nhất.</p>
+				</li>
+
+				<li>
+					<img class="s_icons" src="img/s2.png" alt=""/>
+					<h3>Số Điện Thoại Cố Định Chất Lượng Cao</h3>
+					<p>Cung cấp cuộc gọi chất lượng cao và Internet cùng một đường dây.</p>
+				</li>
+
+				<li>
+					<img class="s_icons" src="img/s3.png" alt=""/>
+					<h3>Internet Tốc Độ Cao</h3>
+					<p>Cung cấp tốc độ mạng ổn định cho bạn thoải mái lướt web xem phim.</p>
+				</li>
+			</ul>
+	</section><!-- End services -->
+
+
+    <section class="recent_work">
+		<div class="work">
+			<a href="#"><img src="img/w1.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href="#"><img src="img/w2.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href="#"><img src="img/w3.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href="#"><img src="img/w4.jpg" alt=""></a>
+		</div>
+		<div class="work">
+			<a href="#"><img src="img/w5.jpg" alt=""></a>
+		</div>
+	</section><!-- End recent_work -->
+
+
+
+
+
+
+
+
+
+    <section class="testimonials wrapper">
+		<h3>CÔNG VIỆC CỦA CHÚNG TÔI VỚI KHÁCH HÀNG</h3>
+		<ul class="testi_boxs">
+			<li>
+				<img class="avatar" src="img/a1.png" alt=""/>
+				<h2>     <span class="client_job">      </span></h2>
+				<p>Luôn Trực Tuyến Để Giúp Bạn Sữa Lỗi</p>
+			</li>
+			<li>
+				<img class="avatar" src="img/a4.jpg" alt=""/>
+				<h2>   <span class="client_job"></span></h2><br /><br /><br />
+				<p> Quản lý và giúp bạn khắc phục lỗi kết nối </p>
+			</li>
+			<li>
+				<img class="avatar" src="img/a3.jpg" alt=""/>
+				<h2>    <span class="client_job"></span></h2>
+				<p> Quản Lý bảo mật các kết nối của bạn ở mức cao nhất </p>
+			</li>
+		</ul>
+	</section><!-- End testimonials -->
+
+
+    <footer>
+		<div class="wrapper">
+			
+
+
+
+			<div class="footer_widget">
+					<div class="f_cols">
+						<h3>Vị Trí</h3>
+						<p>  Số 8  -  Tôn Thất Thuyết, Nam Từ Liêm, Hà Nội. <span class="phone">         </span></p> 	
+						<ul class="sm">
+							<li><a class="fb" href="#"></a></li>
+							<li><a class="twitter" href="#"></a></li>
+							<li><a class="dribbble" href="#"></a></li>
+						</ul>
+					</div>	
+
+					<div class="f_cols">
+						<h3>Công ty - Liên Hệ</h3>
+						<ul>
+							<li><a href="#">   Nexus Marketing là một công ty chuyên cung cấp cái thiết bị mạng    </a></li>
+							<li><a href="#">       </a></li>
+							<li><a href="#">     </a></li>
+							<li><a href="#">      </a></li>
+						</ul>	
+					</div>	
+
+		
+
+					<div class="f_cols">
+						<h3></h3>
+						<p></p>
+					</div>
+
+
+
+
+
+			</div>
+
+			<p class="rights"> CopyRight:Phạm Việt Khánh  <a href="#"></a></p>	
+
+		</div>
+	</footer><!-- End Footer -->
+
+
+  
+                
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+
+
+
+</body>
+</html>
